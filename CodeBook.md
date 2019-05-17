@@ -129,34 +129,33 @@ We will create the following variables:
 
 ## Instruction List:
 ### STEP 1: DOWNLOADING THE DATA SETS
-a. We will use the following packages: dplyr, data.table, tidyr. We create a vector that will contain them.
-b. We check if we have these required package on our machine if not we will install them first, then load them.
-c. We check for the existence of the folder we will download the data sets.
-d. We need to change our workding directory to the files directory
-f. We download the dataSets.zip and unzip it in the "Assignment" local folder.
+1. We will use the following packages: dplyr, data.table, tidyr. We create a vector that will contain them.
+2. We check if we have these required package on our machine if not we will install them first, then load them.
+3. We check for the existence of the folder we will download the data sets.
+4. We need to change our workding directory to the files directory
+5. We download the dataSets.zip and unzip it in the "Assignment" local folder.
 ### STEP 2: LOADING THE DATA SETS INTO R
-a. Load and create the labels and activities files
-b. Create the subset for getting the mean and std from that will be used later.
-c. Change the names of the variables of that subset to make them more clean
-d. Load and create the tests files.
-e. Load and create the train files.
-f. Merge the train and test data set containing the observation datas to create the "mydata" object.
-g. subset the combined data set from f. with the subset obtained in b.
-h. Merge labels and subjects datasets together respectively, to create the labels and subjects objects.
-i. Provide variable names to the obtained sets in g and h.
-k. We merge them all together to obtain the final non tidy data set "mergedData".
-mergedData <- cbind(labels, subjects, mydata)
+1. Load and create the labels and activities files2
+2. Create the subset for getting the mean and std from that will be used later.
+3. Change the names of the variables of that subset to make them more clean
+4. Load and create the tests files.
+5. Load and create the train files.
+6. Merge the train and test data set containing the observation datas to create the "mydata" object.
+7. subset the combined data set from f. with the subset obtained in b.
+8. Merge labels and subjects datasets together respectively, to create the labels and subjects objects.
+9. Provide variable names to the obtained sets in g and h.
+10. We merge them all together to obtain the final non tidy data set "mergedData".
 ### STEP 3: CREATING TIDY DATA SETS
-a. We transform the 2 first variables into factors.
-  a. 1. For the first one we have the activities data table that provides the levels and labels
-  a. 2. For the second one we use the values that are in it.
-b. We create a first tidy data set "tidydata":
+1. We transform the 2 first variables into factors.
+  1. For the first one we have the activities data table that provides the levels and labels
+  2. For the second one we use the values that are in it.
+2. We create a first tidy data set "tidydata":
   . We will take all the last 79 columns that are will be put into a variable columns
   . By observing the dimension of the merged data we see that we have 81 variables.
   . The first 2 ones have to be omitted for the "gather()" function used.
   . I choose to combined all these variables into one "metrics" since that's what they are: the same variable expressed in multiple columns.
-c. We create another tidy data "newtidydata", independant from the one in a, thatwill be grouped by activities and subjects, then we will calculate the mean for each remaining variables.
-  c.1. We group the data by activities and subjects
-  c.2. We create the tidy data set.
+3. We create another tidy data "newtidydata", independant from the one in a, thatwill be grouped by activities and subjects, then we will calculate the mean for each remaining variables.
+  1. We group the data by activities and subjects
+  2. We create the tidy data set.
 ### STEP 4: WE SAVE THE GROUPE TIDY DATA SET INTO FILES FOR LATER USE
 As a text file "tidy.txt"
