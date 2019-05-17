@@ -14,3 +14,23 @@ You should create one R script called run_analysis.R that does the following:
 3. Uses descriptive activity names to name the activities in the data set
 4. Appropriately labels the data set with descriptive variable names. 
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+## How the script works:
+A more detailed description of the script can be found in the script comment or in the Code Book under the instruction list section.
+The script is divided into 5 steps:
+1. Downloading the data sets: we packages required will be installed and data sets downloaded onto the local machine directory "Assignments"
+2. The data sets are created and loaded onto R, prepared (variables named and constrains of retaining only std and mean variables) then combined all together to form the workable data set.
+3. We tidy and created the tidy sets. 
+3.1. We first clean the first 2 columns variables and made them factors.
+3.2 We create a first tidy data set by "gather" the last 79 columns and their values respectively into 2 new columns "metrics" and "oberservations".
+3.3 We create a second tidy data set by grouping the data set obtained in 2 by the first two variables (activity and subject) to return the mean of all remaining variables. Finally we will apply to that data set the same "gather" method to make it tidy.
+4. We will save the last tidy data set obtained in 3.3 in a text file that is provided here on git hub.
+
+## Final notes:
+We haved provided for this assignment the following documents:
+1. A README.md file to give a brief overview of the requried work and its process flow
+2. A run_analysis.R, the script that does all the required work.
+3. A Code Book where more detail information is provided regarding the methods used to gather the data set, the variables and the process used for obtaining the final result: the "tidy.txt" file
+4. A tidy.txt file, that is the result of steps 1, 2, 3.3, 3.4 and 4 of the executed script "run_analysis".
+
+  
