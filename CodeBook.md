@@ -36,35 +36,9 @@ The packages dplyr, data.table and tidyr will be used during this exercise.
 In this section we will describe all the variables defined in the script.
 ### Variables
 We will create the following variables:
-1. activity: a factor variable that can contain the following levels and labels:
-            1. WALKING
-            2. WALKING_UPSTAIRS
-            3. WALKING_DOWNSTAIRS
-            4. SITTING
-            5. STANDING
-            6. LAYING
+1. activity: a factor variable that can contain the following levels and labels:WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 2. subject: a factor variable that can contain 1 to 30 suject Id's
-3. metrics: a character variable that will contain all the measures (metrics) obtained by subsetting the features files based on mean and std measures (79 measures):
-            1. tBodyAccMean()X
-            2. tBodyAccMean()Y
-            3. tBodyAccMean()Z
-            4. tBodyAccStd()X
-            5. tBodyAccStd()Y
-            6. tBodyAccStd()Z
-            7. tGravityAccMean()X
-            8. tGravityAccMean()Y
-            9. tGravityAccMean()Z
-            10. tGravityAccStd()X
-            11. tGravityAccStd()Y
-            12. tGravityAccStd()Z
-            13. tBodyAccJerkMean()X
-            14. tBodyAccJerkMean()Y
-            15. tBodyAccJerkMean()Z
-            16. tBodyAccJerkStd()X
-            17. tBodyAccJerkStd()Y
-            18. tBodyAccJerkStd()Z
-            19. tBodyGyroMean()X
-            ...
+3. metrics: a character variable that will contain all the measures (metrics) obtained by subsetting the features files based on mean and std measures (79 measures).
 4. observations: the values measured for each metrics (obtained by the x_train and x_test files).
 5. averages: a numerical variable that contains the mean of each obsevation grouped by activities and subjects.
 
@@ -90,13 +64,7 @@ We will create the following variables:
 1. We transform the 2 first variables into factors.
   1. For the first one we have the activities data table that provides the levels and labels
   2. For the second one we use the values that are in it.
-2. We create a first tidy data set "tidydata":
-  . We will take all the last 79 columns that are will be put into a variable columns
-  . By observing the dimension of the merged data we see that we have 81 variables.
-  . The first 2 ones have to be omitted for the "gather()" function used.
-  . I choose to combined all these variables into one "metrics" since that's what they are: the same variable expressed in multiple columns.
-3. We create another tidy data "newtidydata", independant from the one in a, thatwill be grouped by activities and subjects, then we will calculate the mean for each remaining variables.
-  1. We group the data by activities and subjects
-  2. We create the tidy data set.
+2. We create a first tidy data set "tidydata". We will take all the last 79 columns that are will be put into a variable columns with the gather() function. I choose to combined all these variables into one "metrics" since that's what they are: the same variable expressed in multiple columns.
+3. We create another tidy data "newtidydata", independant from the one in a, thatwill be grouped by activities and subjects, then we will calculate the mean for each remaining variables. We group the data by activities and subjects and create the tidy data set.
 ### STEP 4: WE SAVE THE GROUPE TIDY DATA SET INTO FILES FOR LATER USE
 As a text file "tidy.txt"
