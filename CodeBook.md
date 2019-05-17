@@ -40,7 +40,7 @@ We will create the following variables:
 2. subject: a factor variable that can contain 1 to 30 suject Id's
 3. metrics: a character variable that will contain all the measures (metrics) obtained by subsetting the features files based on mean and std measures (79 measures).
 4. observations: the values measured for each metrics (obtained by the x_train and x_test files).
-5. averages: a numerical variable that contains the mean of each obsevation grouped by activities and subjects.
+5. The 79 measures used in 3 becames variables for the tidy.txt file and the corresponding object: newtidydata.
 
 ## Instruction List:
 ### STEP 1: DOWNLOADING THE DATA SETS
@@ -65,6 +65,6 @@ We will create the following variables:
   1. For the first one we have the activities data table that provides the levels and labels
   2. For the second one we use the values that are in it.
 2. We create a first tidy data set "tidydata". We will take all the last 79 columns that are will be put into a variable columns with the gather() function. I choose to combined all these variables into one "metrics" since that's what they are: the same variable expressed in multiple columns.
-3. We create another tidy data "newtidydata", independant from the one in a, thatwill be grouped by activities and subjects, then we will calculate the mean for each remaining variables. We group the data by activities and subjects and create the tidy data set.
+3. We create another tidy data "newtidydata", independant from the one in a, that will be grouped by activities and subjects, then we will calculate the mean for each remaining variables. We group the data by activities and subjects and create the tidy data set.
 ### STEP 4: WE SAVE THE GROUPE TIDY DATA SET INTO FILES FOR LATER USE
 As a text file "tidy.txt"
